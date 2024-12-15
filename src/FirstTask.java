@@ -47,8 +47,11 @@ public class FirstTask {
                 synchronized (results) {
                     results.add(processed);
                 }
-                long start = System.currentTimeMillis();
                 System.out.println("Результат видалення літер у файлі " + path.getFileName()+" : " + processed );
+
+            }).thenRunAsync (()->{
+                long start = System.currentTimeMillis();
+
                 System.out.println("Збереження результату завершено за " +
                         (System.currentTimeMillis() - start) + " мс.\n");
             });
